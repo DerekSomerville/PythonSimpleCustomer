@@ -11,5 +11,5 @@ class Customers:
         display = ""
         customerData = self.loadCustomers()
         for counter in range(1,len(customerData)):
-            display += customerData[counter] + " \n"
+            display += customerData[counter][0] + "  \n"
         return display
