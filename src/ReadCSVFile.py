@@ -1,20 +1,20 @@
 import csv, os
 class ReadCSVFile:
 
-    def fixWorkingDirectory(self):
-        currentWorkingDirectory = os.getcwd()
-        while "test" in currentWorkingDirectory or "src" in currentWorkingDirectory:
+    def fix_working_directory(self):
+        current_working_directory = os.getcwd()
+        while "test" in current_working_directory or "src" in current_working_directory:
             os.chdir("../")
-            currentWorkingDirectory = os.getcwd()
+            current_working_directory = os.getcwd()
 
-    def getFileData(self,fileName):
-        self.fixWorkingDirectory()
-        fileData = []
-        with open("resource/" + fileName, 'rt')as dataFile:
-            fileReader = csv.reader(dataFile)
-            for row in fileReader:
-                fileData.append(row)
-        return fileData
+    def get_file_data(self,file_name):
+        self.fix_working_directory()
+        file_data = []
+        with open("resource/" + file_name, 'rt')as data_file:
+            file_reader = csv.reader(data_file)
+            for row in file_reader:
+                file_data.append(row)
+        return file_data
 
-    def getLastLines(self, fileName, numerOfLines):
-        return getFileData(fileName)[-1 * numerOfLines]
+    def get_last_lines(self, file_name, numer_of_lines):
+        return get_file_data(file_name)[-1 * numer_of_lines]

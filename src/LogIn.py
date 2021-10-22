@@ -1,19 +1,19 @@
 from src.Customers import Customers
 class LogIn:
-    def getPassword(self,emailAddress):
+    def get_password(self,email_address):
         customers = Customers()
-        customerData = customers.loadCustomers()
+        customer_data = customers.load_customers()
         password = ""
         counter = 0
-        while password == "" and counter < len(customerData):
-            if emailAddress == customerData[counter][0]:
-                password = customerData[counter][3]
+        while password == "" and counter < len(customer_data):
+            if email_address == customer_data[counter][0]:
+                password = customer_data[counter][3]
             counter += 1
         return password
 
-    def logIn(self):
-        emailAddress = input("Enter your email address")
-        password = self.getPassword(emailAddress)
+    def log_in(self):
+        email_address = input("Enter your email address")
+        password = self.get_password(email_address)
         if password == "":
             print("You are not a user")
         else:

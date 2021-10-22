@@ -2,14 +2,14 @@ from src.ReadCSVFile import ReadCSVFile
 
 class Customers:
 
-    def loadCustomers(self):
-        readCSVFile = ReadCSVFile()
-        customerData = readCSVFile.getFileData("customer.csv")
-        return customerData
+    def load_customers(self):
+        read_csv_file = ReadCSVFile()
+        customer_data = read_csv_file.get_file_data("customer.csv")
+        return customer_data
 
-    def formatCustomers(self):
+    def format_customers(self):
         display = ""
-        customerData = self.loadCustomers()
-        for counter in range(1,len(customerData)):
-            display += customerData[counter][0] + "  \n"
+        customer_data = self.load_customers()
+        for counter in range(1,len(customer_data)):
+            display += customer_data[counter][0] + "  \n"
         return display
